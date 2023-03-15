@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" rel="noopener" target="_blank" href="style.css">
+    <title>Crypto Alert</title>
+  </head>
+  <body>
+    <h1>Crypto Price Alert</h1>
+    <form method="POST">
+        <table>
+            <tr>
+                <th>Token Name</th>
+                <th>Current Price</th>
+                <th>Threshold Price</th>
+                <th>Timestamp</th>
+                <th>Delete</th>
+            </tr>
+            {% for crypto_token, data in crypto_tokens.items() %}
+            <tr>
+                <td>{{ crypto_token }}</td>
+                <td>{{ prices[crypto_token] }}</td>
+                <td><input type="number" step="0.0001" min="0" name="{{ crypto_token }}_threshold_price" value="{{ data.threshold_price }}"></td>
+                <td>{{ data.timestamp }}</td>
+                <td><button type="submit" name="delete_token" value="{{ crypto_token }}">Delete</button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+    <form method="POST">
+        <label>Add Token:</label>
+        <input type="text" name="token_name">
+        <label>Threshold Price:</label>
+        <input type="number" step="0.0001" min="0" name="threshold_price">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
