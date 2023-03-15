@@ -1,14 +1,15 @@
 #                                                                         Crypto Price Alert
 Crypto Price Alert is a web application that allows users to monitor the prices of their favorite cryptocurrencies in real-time and receive alerts on WhatsApp when the prices break a specified threshold.
 
-##Prerequisites
+Prerequisites
+
 Before running the application, you will need to do the following:
-
-
 Have a Twilio account and obtain an account SID and auth token.
 Have a WhatsApp account and add Twilio's WhatsApp number to your contacts.
 
 ##Installation
+
+
 Clone this repository to your local machine.
 Create a virtual environment and activate it.
 Install the required packages by running pip
